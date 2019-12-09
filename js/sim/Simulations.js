@@ -404,13 +404,17 @@ function Sim(config) {
         }
       }
       if (self.STEP > self.contagion) {
-        // var nonsmoke = 0;
-        // self.peeps.forEach(peep => {
-        //   if (!!peep.infected) nonsmoke++;
-        // });
-        publish("sim/stop");
+        var nonsmoke = 0;
+        self.peeps.forEach(peep => {
+          if (!peep.infected) nonsmoke++;
+        });
+        if (nonsmoke > 0) {
+          alert("Well done! You have survivors!");
+        } else {
+          alert("Aww. Everyone got smokin'");
+        }
 
-        // alert(`${nonsmoke} survived ${self.contagion} rounds without smoking!`);
+        publish("sim/stop");
       }
     });
 
