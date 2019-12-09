@@ -1,0 +1,248 @@
+
+/* HTML & BODY */
+html, body{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	cursor: none;
+}
+body{
+	background: #fff;
+	margin:0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 23px;
+	line-height: 1.5em;
+
+}
+/* fake bold */
+b, strong{
+	font-weight: normal;
+	text-shadow:1px 0 0 currentColor;
+}
+a{
+	color: #ff4040;
+}
+a:hover{
+	color: #ff6060;
+}
+
+/* SIMULATION and SLIDESHOW */
+#container{
+	position: absolute;
+	top:0; left:0;
+	width: 100%;
+	height: calc(100% - 60px);
+	cursor: none;
+	overflow: hidden; /* modal's being awful */
+}
+#container[sim_is_running]{
+	background: #eee;
+}
+#container > div{
+	position: absolute;
+	width: 100%; height: 100%;
+	overflow: hidden;
+	cursor: none;
+}
+#simulations, #slideshow{
+	position: absolute;
+	width: 960px;
+	height: 540px;
+	margin: auto;
+	top:0; left:0; right:0; bottom:0;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; 
+}
+#simulations canvas, #slideshow > div{
+	position: absolute;
+}
+#slideshow .box.image{
+	background-size: 100% 100%;
+}
+
+
+#scratch{
+	position: absolute;
+	cursor: none;
+	display: none;
+	pointer-events: none;
+	width: 100%; height: 100%;
+}
+
+
+
+/* Peep Icon */
+.peep_icon{
+	height:1em;
+	position: relative;
+    top: 3px;
+    transform: scale(1.2);
+}
+
+/* Right & Down Arrows */
+.rarr, .darr{
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: url(../sprites/ui/arrow.png);
+	background-size: 100% auto;
+	position: relative;
+	top: 3px;
+}
+.darr{
+	transform: rotate(90deg);
+}
+
+/* Sim UI */
+.sim_ui{
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	border: none !important;
+}
+.sim_ui > div{
+	position: absolute;
+	color: #fff;
+	text-align: center;
+	border-radius: 10px;
+}
+.sim_ui > #start_button{
+	width: 200px;
+	padding: 0.5em 0;
+	background-image: url(../sprites/red_button.png);
+	background-size: 100% auto;
+
+	position: relative;
+	top:0;
+	transition: top 0.1s ease-in-out;
+}
+.sim_ui[active] > #start_button{
+	background-position: 0 -62.5px;
+}
+.sim_ui > #start_button:hover{
+	top:-3px;
+}
+.sim_ui > #start_button:active{
+	top:3px;
+}
+
+/* Sandbox UI */
+.sandbox_ui{
+	width: 270px;
+}
+.sandbox_ui input[type="range"]{
+	width: 100%;
+	cursor: none;
+}
+
+
+/* MODAL */
+#modal_container{
+	top:100%;
+	transition: top 0.4s ease-in-out;
+}
+#modal_container[show]{
+	top:0%;
+}
+#modal_bg{
+	width: 100%;
+	height: 100%;
+}
+#modal{
+
+	position: absolute;
+	margin: auto;
+    top:0; left:0; right:0; bottom:0;
+
+	background: #444;
+	color: #fff;
+
+}
+#modal #modal_content > div:first-child > h3{
+	border-top: none;
+}
+#modal #modal_content > h3{
+	border-top: none;
+}
+#modal h3{
+	font-size: 1.3em;
+    margin-bottom: 0.7em;
+    padding-top: 0.7em;
+    margin-top: 1em;
+    border-top: 5px solid #282828;
+}
+#modal[size=small]{
+	width: 700px;
+	height: 300px;
+}
+#modal[size=large]{
+	width: 800px;
+	height: 540px;
+}
+#modal_close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 25px;
+}
+#modal_content_container{
+	overflow: auto;
+	width: 100%; height:100%;
+}
+#modal_content{
+	margin:1.5em;
+	letter-spacing: 1px;
+}
+
+
+
+/* PENCIL */
+#pencil_container{
+	position: absolute;
+	top:0; left:0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	pointer-events: none;
+	cursor: none;
+}
+#pencil{
+	position: absolute;
+	width:100px;
+	height:100px;
+	pointer-events: none;
+	cursor: none;
+}
+
+/* PRE-PRELOADER */
+#pre_preloader{
+	position: absolute;
+	background: #fff;
+	width:100%;
+	height: 100%;
+	cursor: default;
+}
+#pre_preloader > div{
+	text-align: center;
+	width:300px; height:40px;
+	line-height: 40px;
+	font-size: 40px;
+	margin: auto;
+	position: absolute;
+	top:-40px; left:0; right:0; bottom:0;
+}
+
+/* THIS THING'S WORDS */
+words, bonus, reference{
+	display: none;
+}
+
+
+
